@@ -1,3 +1,2 @@
 #!/bin/bash
 cp $PYFILE $PYFILE'c'
-rm -rf __pycache__
