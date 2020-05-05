@@ -13,7 +13,6 @@ int get_result(listint_t **head, int a, int middle)
 
 	for (i = 0; ptr; i++)
 	{
-
 		if (a == 1 && i == middle)
 		{
 			ptr = ptr->next;
@@ -40,6 +39,8 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr = *head;
 	int counter = 0;
 
+	if (!head || !(*head) || !((*head)->next))
+		return (1);
 	while (ptr)
 		ptr = ptr->next, counter++;
 	if (counter == 1)
