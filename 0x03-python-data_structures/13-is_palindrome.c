@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 /**
  * get_result - verify if is palindrome word
@@ -39,8 +40,6 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr = *head;
 	int counter = 0;
 
-	if (!head || !(*head) || !((*head)->next))
-		return (1);
 	while (ptr)
 		ptr = ptr->next, counter++;
 	if (counter == 1)
