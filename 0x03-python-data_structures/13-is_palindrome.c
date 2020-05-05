@@ -22,9 +22,11 @@ int get_result(listint_t **head, int a, int middle)
 			sum += ptr->n;
 		else if (i >= middle)
 			sum -= ptr->n;
+		if (!ptr->next)
+			break;
 		ptr = ptr->next;
 	}
-	if (sum != 0)
+	if (sum != 0 || (*head)->n != ptr->n)
 		return (0);
 	else
 		return (1);
