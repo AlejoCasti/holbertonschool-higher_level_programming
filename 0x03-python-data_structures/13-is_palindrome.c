@@ -36,6 +36,8 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr = *head;
 	int counter = 0;
 
+	if (!*head)
+		return (0);
 	while (ptr)
 		ptr = ptr->next, counter++;
 	return (get_result(head, counter % 2, counter / 2));
