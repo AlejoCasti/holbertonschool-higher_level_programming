@@ -26,7 +26,7 @@ int get_result(listint_t **head, int a, int middle)
 			break;
 		ptr = ptr->next;
 	}
-	if (sum != 0)
+	if (sum != 0 || (*head)->n != ptr->n)
 		return (0);
 	else
 		return (1);
@@ -41,6 +41,8 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr = *head;
 	int counter = 0;
 
+	if (!*head)
+		return (1);
 	while (ptr)
 		ptr = ptr->next, counter++;
 	if (counter == 1)
