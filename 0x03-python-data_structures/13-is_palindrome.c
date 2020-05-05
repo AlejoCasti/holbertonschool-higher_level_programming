@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lists.h"
 /**
  * get_result - verify if is palindrome word
