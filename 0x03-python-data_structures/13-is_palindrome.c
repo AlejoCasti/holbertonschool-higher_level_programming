@@ -26,7 +26,7 @@ int get_result(listint_t **head, int a, int middle)
 			break;
 		ptr = ptr->next;
 	}
-	if (sum != 0 || (*head)->n != ptr->n)
+	if (sum != 0)
 		return (0);
 	else
 		return (1);
