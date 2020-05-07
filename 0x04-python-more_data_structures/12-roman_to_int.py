@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     suma = 0
+    if type(roman_string) != str:
+        return None
     for i in roman_string:
         suma += 1 if i == 'I' else 0
         suma += 5 if i == 'V' else 0
