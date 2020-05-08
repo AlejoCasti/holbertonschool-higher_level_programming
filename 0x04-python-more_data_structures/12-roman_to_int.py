@@ -6,11 +6,13 @@ def roman_to_int(roman_string):
     if type(roman_string) != str:
         return None
     for idx, i in enumerate(roman_string):
-        if idx < len(roman_string):
-            current = letter.get(i)
-            nexto = letter.get(roman_string[idx])
+        current = letter.get(i)
+        if idx < len(roman_string) - 1:
+            nexto = letter.get(roman_string[idx + 1])
             if current >= nexto:
                 suma += current
             else:
                 suma -= current
+        else:
+            suma += current
     return suma
