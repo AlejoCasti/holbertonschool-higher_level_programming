@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    suma = 0
+    suma, current, nexto = 0, 0, 0
+    letter = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100,
+              'D': 500, 'M': 1000}
     if type(roman_string) != str:
         return None
-    for i in roman_string:
-        suma += 1 if i == 'I' else 0
-        suma += 5 if i == 'V' else 0
-        suma += 10 if i == 'X' else 0
-        suma += 50 if i == 'L' else 0
-        suma += 100 if i == 'C' else 0
-        suma += 500 if i == 'D' else 0
-        suma += 1000 if i == 'M' else 0
+    for idx, i in enumerate(roman_string):
+        if idx < len(roman_string):
+            current = letter.get(i)
+            nexto = letter.get(roman_string[idx])
+            if current >= nexto:
+                suma += current
+            else:
+                suma -= current
     return suma
