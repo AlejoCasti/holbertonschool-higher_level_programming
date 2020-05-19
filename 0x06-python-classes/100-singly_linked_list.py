@@ -53,7 +53,7 @@ class SinglyLinkedList:
             lista += "\n" + str(tmp_node.data)
             tmp_node = tmp_node.next_node
         return lista
-    """ add node in sorted linked list """
+
     def sorted_insert(self, value):
         new_node = Node(value)
         tmp_node = self.__head
