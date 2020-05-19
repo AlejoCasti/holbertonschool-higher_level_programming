@@ -12,8 +12,6 @@ class Node:
         self.__data = data
         self.__next_node = next_node
 
-    # Getter and Setter
-    # data
     """ getter data"""
     @property
     def data(self):
@@ -25,20 +23,16 @@ class Node:
             raise TypeError('data must be an integer')
         self.__data = value
 
-    # next_node
     """ getter next_node"""
     @property
     def next_node(self):
         return self.__next_node
-    """ setter data"""
+    """ setter next_node """
     @next_node.setter
     def next_node(self, value):
         if type(value) is not Node and value is not None:
             raise TypeError('next_node must be a Node object')
         self.__next_node = value
-
-
-""" class linked list """
 
 
 class SinglyLinkedList:
