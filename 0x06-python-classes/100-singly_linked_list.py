@@ -72,8 +72,4 @@ class SinglyLinkedList:
             if (tmp_node.data <= value) and\
                (tmp_node.next_node is None
                     or tmp_node.next_node.data > value):
-                new_node.next_node = tmp_node.next_node
-                tmp_node.next_node = new_node
-                return
-            tmp_node = tmp_node.next_node
-            counter += 1
+                counter += 1
