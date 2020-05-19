@@ -5,6 +5,7 @@
 class Node:
     """ constructor function """
     def __init__(self, data, next_node=None):
+        """ """
         if type(data) is not int:
             raise TypeError('data must be an integer')
         if type(next_node) is not Node and next_node is not None:
@@ -38,9 +39,11 @@ class Node:
 class SinglyLinkedList:
     """ constructor function"""
     def __init__(self):
+        """ """
         self.__head = None
-    """ tostring function"""
+
     def __str__(self):
+        """ """
         tmp_node = self.__head.next_node
         lista = str(self.__head.data)
         if self.__head is None:
