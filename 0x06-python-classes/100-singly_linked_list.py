@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" class Node """
+
+
 class Node:
+    """ constructor function """
     def __init__(self, data, next_node=None):
         if type(data) is not int:
             raise TypeError('data must be an integer')
@@ -10,10 +14,11 @@ class Node:
 
     # Getter and Setter
     # data
+    """ getter data"""
     @property
     def data(self):
         return self.__data
-
+    """ setter data"""
     @data.setter
     def data(self, value):
         if type(value) is not int:
@@ -21,10 +26,11 @@ class Node:
         self.__data = value
 
     # next_node
+    """ getter next_node"""
     @property
     def next_node(self):
         return self.__next_node
-
+    """ setter data"""
     @next_node.setter
     def next_node(self, value):
         if type(value) is not Node and value is not None:
@@ -32,10 +38,14 @@ class Node:
         self.__next_node = value
 
 
+""" class linked list """
+
+
 class SinglyLinkedList:
+    """ constructor function"""
     def __init__(self):
         self.__head = None
-
+    """ tostring function"""
     def __str__(self):
         tmp_node = self.__head.next_node
         lista = str(self.__head.data)
@@ -43,7 +53,7 @@ class SinglyLinkedList:
             lista += "\n" + str(tmp_node.data)
             tmp_node = tmp_node.next_node
         return lista
-
+    """ add node in sorted linked list """
     def sorted_insert(self, value):
         new_node = Node(value)
         tmp_node = self.__head
