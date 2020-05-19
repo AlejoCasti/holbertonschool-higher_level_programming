@@ -64,21 +64,23 @@ class SinglyLinkedList:
         if self.__head is None:
             self.__head = new_node
             return
-        while tmp_node.next_node is not None:
+        else:
+            while tmp_node.next_node is not None:
+                if counter == 0 and tmp_node.data >= value:
+                    new_node.next_node = self.__head
+                    self.__head = new_node
+                    return
+                if (tmp_node.data <= value) and\
+                   (tmp_node.next_node is None
+                        or tmp_node.next_node.data > value):
+                    new_node.next_node = tmp_node.next_node
+                    tmp_node.next_node = new_node
+                    return
+                tmp_node = tmp_node.next_node
+                counter += 1
             if counter == 0 and tmp_node.data >= value:
                 new_node.next_node = self.__head
                 self.__head = new_node
                 return
-            if (tmp_node.data <= value) and\
-               (tmp_node.next_node is None or tmp_node.next_node.data > value):
-                new_node.next_node = tmp_node.next_node
-                tmp_node.next_node = new_node
-                return
-            tmp_node = tmp_node.next_node
-            counter += 1
-        if counter == 0 and tmp_node.data >= value:
-            new_node.next_node = self.__head
-            self.__head = new_node
-            return
-        new_node.next_node = tmp_node.next_node
-        tmp_node.next_node = new_node
+            new_node.next_node = tmp_node.next_node
+            tmp_node.next_node = new_node
