@@ -63,7 +63,7 @@ class SinglyLinkedList:
             return
         else:
             while tmp_node.next_node is not None:
-                if counter == 0 and tmp_node.data > value:
+                if counter == 0 and tmp_node.data >= value:
                     new_node.next_node = self.__head
                     self.__head = new_node
                     return
