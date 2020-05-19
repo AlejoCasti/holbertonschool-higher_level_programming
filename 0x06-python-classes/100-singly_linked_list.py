@@ -70,6 +70,5 @@ class SinglyLinkedList:
                 self.__head = new_node
                 return
             if (tmp_node.data <= value) and\
-               (tmp_node.next_node is None
-                    or tmp_node.next_node.data > value):
+               (tmp_node.next_node is None or tmp_node.next_node.data > value):
                 counter += 1
