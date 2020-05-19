@@ -44,10 +44,10 @@ class SinglyLinkedList:
 
     def __str__(self):
         """ """
-        tmp_node = self.__head.next_node
-        lista = str(self.__head.data)
         if self.__head is None:
             return ""
+        lista = str(self.__head.data)
+        tmp_node = self.__head.next_node
         while tmp_node is not None:
             lista += "\n" + str(tmp_node.data)
             tmp_node = tmp_node.next_node
