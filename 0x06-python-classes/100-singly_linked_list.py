@@ -59,28 +59,27 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """ sorted linked list """
         new_node = Node(value)
-        tmp_node = self.__head
+        tmp = self.__head
         counter = 0
         if self.__head is None:
             self.__head = new_node
             return
         else:
-            while tmp_node.next_node is not None:
-                if counter == 0 and tmp_node.data >= value:
+            while tmp.next_node is not None:
+                if counter == 0 and tmp.data >= value:
                     new_node.next_node = self.__head
                     self.__head = new_node
                     return
-                if (tmp_node.data <= value) and\
-                   (tmp_node.next_node is None
-                        or tmp_node.next_node.data > value):
-                    new_node.next_node = tmp_node.next_node
-                    tmp_node.next_node = new_node
+                if (tmp.data <= value) and\
+                   (tmp.next_node is None or tmp.next_node.data > value):
+                    new_node.next_node = tmp.next_node
+                    tmp.next_node = new_node
                     return
-                tmp_node = tmp_node.next_node
+                tmp = tmp.next_node
                 counter += 1
-            if counter == 0 and tmp_node.data >= value:
+            if counter == 0 and tmp.data >= value:
                 new_node.next_node = self.__head
                 self.__head = new_node
                 return
-            new_node.next_node = tmp_node.next_node
-            tmp_node.next_node = new_node
+            new_node.next_node = tmp.next_node
+            tmp.next_node = new_node
