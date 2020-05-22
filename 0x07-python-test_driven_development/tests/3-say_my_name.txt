@@ -1,0 +1,38 @@
+
+It only has one function called
+``say_my_name()``.
+
+
+``say_my_name()`` print args as a name. 
+
+Normal test
+=======
+print args that we sent
+::
+    >>> print = __import__('3-say_my_name').say_my_name
+    >>> print('alejo', 'casti')
+    My name is alejo casti
+
+print without last_name, functions must print a space next to first_name
+::
+
+    >>> print('alejo')
+    My name is alejo 
+
+Test errors
+=======
+Type of first_name value error 
+::
+
+    >>> print(2, "casa")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Type of last_name value error
+::
+
+    >>> print("casa", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string

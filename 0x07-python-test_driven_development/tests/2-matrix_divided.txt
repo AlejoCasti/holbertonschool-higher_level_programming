@@ -1,0 +1,59 @@
+
+It only has one function called
+``matrix_divided()``.
+
+
+
+TypeError
+=======
+
+``matrix_divided()`` returns a new divided matrix. 
+
+Type of value error
+::
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix_divided([["casa", 2, 3],[4, 5, 6]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Matrix has not same size of list inside
+::
+
+    >>> matrix_divided([[1, 2, 3, 4], [1, 2, 3]], 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+    
+Div type value 
+::
+
+    >>> matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> matrix_divided(matrix, "Hola")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Div cannot be 0 value
+::
+
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Normal test
+=======
+
+normal division
+::
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5], [0.5, 1.0, 1.5]]
+
+return other matrix
+::
+    >>> ma = matrix_divided(matrix, 2)
+    >>> matrix
+    [[1, 2, 3], [1, 2, 3]]

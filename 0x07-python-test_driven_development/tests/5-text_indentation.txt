@@ -1,0 +1,53 @@
+It only has one function called
+``text_indentation()``.
+
+
+``text_indentation()`` print indentation of a string. 
+
+Normal test
+=======
+black space at the beginning and at the end
+::
+    >>> print = __import__('5-text_indentation').text_indentation
+    >>> print('casa? casa')
+    casa?
+    <BLANKLINE>    
+    casa
+
+value .
+::
+    >>> print('casa. casa')
+    casa.
+    <BLANKLINE>    
+    casa
+
+value ?
+::
+    >>> print('casa? casa')
+    casa?
+    <BLANKLINE>
+    casa
+
+value :
+::
+    >>> print('casa: casa')
+    casa:
+    <BLANKLINE>
+    casa
+
+value :
+::
+    >>> print('casa:')
+    casa:
+    <BLANKLINE>
+
+Test errors
+=======
+Type of value error (string valur passed)
+::
+
+    >>> print(2)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
