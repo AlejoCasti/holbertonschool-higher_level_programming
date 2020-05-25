@@ -70,7 +70,6 @@ class Rectangle:
             return 0
         return (self.width * 2) + (self.height * 2)
 
-    """ static methods """
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if type(rect_1) is not Rectangle:
