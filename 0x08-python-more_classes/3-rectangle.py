@@ -41,7 +41,7 @@ class Rectangle:
     """ tostring and representation """
     def __str__(self):
         n_s = ''
-        if self.height is 0 or self.width is 0:
+        if self.height == 0 or self.width == 0:
             return n_s
         for i in range(self.height):
             n_s += ('#' * self.width) + '\n'
