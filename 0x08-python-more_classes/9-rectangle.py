@@ -48,7 +48,9 @@ class Rectangle:
         if self.height is 0 or self.width is 0:
             return n_s
         for i in range(self.height):
-            n_s += (str(self.print_symbol) * self.width) + '\n'
+            n_s += (str(self.print_symbol) * self.width)
+            if i != self.height - 1:
+                n_s += '\n'
         return n_s
 
     def __repr__(self):
@@ -57,7 +59,7 @@ class Rectangle:
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
-        print('Bye rectangle... ')
+        print('Bye rectangle...')
 
     """ public instance method """
     def area(self):
