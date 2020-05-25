@@ -44,7 +44,9 @@ class Rectangle:
         if self.height is 0 or self.width is 0:
             return n_s
         for i in range(self.height):
-            n_s += ('#' * self.width) + '\n'
+            n_s += ('#' * self.width)
+        if i != self.height - 1:
+                n_s += '\n'
         return n_s
 
     def __repr__(self):
