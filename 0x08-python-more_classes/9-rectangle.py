@@ -13,16 +13,9 @@ class Rectangle:
         self.width = width
         Rectangle.number_of_instances += 1
 
-    """ Getter """
     @property
     def height(self):
         return self.__height
-
-    @property
-    def width(self):
-        return self.__width
-
-    """ Setter """
 
     @height.setter
     def height(self, value):
@@ -33,6 +26,10 @@ class Rectangle:
 
         self.__height = value
 
+    @property
+    def width(self):
+        return self.__width
+    
     @width.setter
     def width(self, value):
         if type(value) is not int:
@@ -79,7 +76,7 @@ class Rectangle:
         if rect_2.area() == rect_1.area():
             return rect_1
         return (rect_2 if rect_2.area() > rect_1.area() else rect_1)
-    
+
     @classmethod
     def square(cls, size=0):
         return cls(size, size)
