@@ -13,10 +13,6 @@ class Rectangle:
         self.width = width
         Rectangle.number_of_instances += 1
 
-    @classmethod
-    def square(cls, size=0):
-        return cls(size, size)
-
     """ Getter """
     @property
     def height(self):
@@ -45,7 +41,7 @@ class Rectangle:
         self.__width = value
 
     """ main functions """
-    def __str__(self):
+    """def __str__(self):
         n_s = ''
         if self.height == 0 or self.width == 0:
             return ""
@@ -53,7 +49,17 @@ class Rectangle:
             n_s += (str(self.print_symbol) * self.width)
             if i != (self.height - 1):
                 n_s += '\n'
-        return n_s
+        return n_s"""
+
+    def __str__(self):
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+        for i in range(self.__height):
+            string += str(self.print_symbol) * self.__width
+            if i < (self.__height - 1):
+                string += "\n"
+        return string
 
     def __repr__(self):
         return 'Rectangle(' + str(self.width) +\
@@ -81,3 +87,7 @@ class Rectangle:
         if rect_2.area() == rect_1.area():
             return rect_1
         return (rect_1 if rect_1.area() >= rect_2.area() else rect_2)
+
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
