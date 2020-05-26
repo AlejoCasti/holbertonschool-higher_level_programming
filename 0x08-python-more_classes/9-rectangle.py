@@ -30,7 +30,6 @@ class Rectangle:
             raise TypeError('height must be an integer')
         if value < 0:
             raise ValueError('height must be >= 0')
-
         self.__height = value
 
     @width.setter
@@ -39,7 +38,6 @@ class Rectangle:
             raise TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
-
         self.__width = value
 
     """ main functions """
@@ -82,5 +80,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """ """
         return cls(size, size)
