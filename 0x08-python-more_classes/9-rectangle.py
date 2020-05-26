@@ -41,7 +41,7 @@ class Rectangle:
         self.__width = value
 
     """ main functions """
-    """def __str__(self):
+    def __str__(self):
         n_s = ''
         if self.height == 0 or self.width == 0:
             return ""
@@ -49,17 +49,7 @@ class Rectangle:
             n_s += (str(self.print_symbol) * self.width)
             if i != (self.height - 1):
                 n_s += '\n'
-        return n_s"""
-
-    def __str__(self):
-        string = ""
-        if self.__width == 0 or self.__height == 0:
-            return string
-        for i in range(self.__height):
-            string += str(self.print_symbol) * self.__width
-            if i < (self.__height - 1):
-                string += "\n"
-        return string
+        return n_s
 
     def __repr__(self):
         return 'Rectangle(' + str(self.width) +\
@@ -84,8 +74,6 @@ class Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
-        if rect_2.area() == rect_1.area():
-            return rect_1
         return (rect_1 if rect_1.area() >= rect_2.area() else rect_2)
 
     @classmethod
