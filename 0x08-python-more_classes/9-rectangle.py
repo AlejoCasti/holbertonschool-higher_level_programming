@@ -30,6 +30,7 @@ class Rectangle:
             raise TypeError('height must be an integer')
         if value < 0:
             raise ValueError('height must be >= 0')
+
         self.__height = value
 
     @width.setter
@@ -38,16 +39,17 @@ class Rectangle:
             raise TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
+
         self.__width = value
 
     """ main functions """
     def __str__(self):
         n_s = ''
-        if self.height == 0 or self.width == 0:
-            return ""
+        if self.height is 0 or self.width is 0:
+            return n_s
         for i in range(self.height):
             n_s += (str(self.print_symbol) * self.width)
-            if i != (self.height - 1):
+            if i != self.height - 1:
                 n_s += '\n'
         return n_s
 
@@ -57,7 +59,7 @@ class Rectangle:
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
-        print('Bye rectangle....')
+        print('Bye rectangle...')
 
     """ public instance method """
     def area(self):
@@ -74,8 +76,10 @@ class Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
             raise TypeError('rect_2 must be an instance of Rectangle')
-        return (rect_1 if rect_1.area() >= rect_2.area() else rect_2)
-
+        if rect_2.area() == rect_1.area():
+            return rect_1
+        return (rect_2 if rect_2.area() > rect_1.area() else rect_1)
+    
     @classmethod
     def square(cls, size=0):
         return cls(size, size)
