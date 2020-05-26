@@ -60,7 +60,8 @@ class Rectangle:
         return n_s
 
     def __repr__(self):
-        return 'Rectangle({}, {})'.format(self.width, self.height)
+        return 'Rectangle(' + str(self.width) +\
+            ', ' + str(self.height) + ')'
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
