@@ -18,12 +18,12 @@ class Rectangle:
         return cls(size, size)
 
     @property
-    def width(self):
-        return self.__width
-
-    @property
     def height(self):
         return self.__height
+
+    @property
+    def width(self):
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -50,15 +50,14 @@ class Rectangle:
         return (self.width + self.height) * 2
 
     def __str__(self):
-        if self.width == 0 or self.height == 0:
-            return ''
-        rect = ''
-        for col in range(self.height):
-            for row in range(self.width):
-                rect += str(self.print_symbol)
-            if col != self.height - 1:
-                rect += '\n'
-        return rect
+        n_s = ''
+        if self.height is 0 or self.width is 0:
+            return n_s
+        for i in range(self.height):
+            n_s += (str(self.print_symbol) * self.width)
+            if i != self.height - 1:
+                n_s += '\n'
+        return n_s
 
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
