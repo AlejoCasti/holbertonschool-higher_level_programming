@@ -17,5 +17,5 @@ class Student:
             dic = {}
             for i in attrs:
                 if i in self.__dict__:
-                    dic[i] = getattr(self, i, "")
+                    dic[i] = self.__dict__[i]
             return dic
