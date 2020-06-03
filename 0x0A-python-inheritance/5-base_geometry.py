@@ -2,6 +2,6 @@
 """ documentation """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """ documentation """
     pass
