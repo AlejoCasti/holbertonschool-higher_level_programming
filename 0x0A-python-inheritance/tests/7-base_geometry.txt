@@ -1,5 +1,3 @@
-
-
 Create a BaseGeometry instance
 =======
 
@@ -48,10 +46,6 @@ args
     ValueError: distance must be greater than 0
 
 
-Validate if area:
-    >>> 'area' in dir(BaseGeometry)
-    True
-
-Validate if integer validator:
-    >>> 'integer_validator' in dir(BaseGeometry)
-    True
+>>> bg.integer_validator("Hello", 7, 8)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
