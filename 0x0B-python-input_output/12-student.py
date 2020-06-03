@@ -12,10 +12,8 @@ class Student:
 
     def to_json(self, attrs=None):
         """ """
-        if type(attrs) is not list\
-           or len(set([type(j) for j in attrs])) != 1:
-            return self.__dict__
-        else:
+        if type(attrs) is list\
+           and len(set([type(j) for j in attrs])) == 1:
             dic = {}
             for i in attrs:
                 if i in self.__dict__:
