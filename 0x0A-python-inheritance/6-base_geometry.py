@@ -2,7 +2,7 @@
 """ documentation """
 
 
-class BaseGeometry:
+class BaseGeometry():
     """ documentation """
     def area(self):
         raise Exception("area() is not implemented")
