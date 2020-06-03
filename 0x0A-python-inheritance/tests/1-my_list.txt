@@ -1,31 +1,37 @@
 
 Importing the class from the module:
     >>> MyList = __import__('1-my_list').MyList
+
 subclass:
     >>> issubclass(MyList, list)
     True
+
 empty list:
     >>> list = MyList()
     >>> list.print_sorted()
     []
+
 basic example:
     >>> list.append(1)
     >>> list.append(2)
-    >>> list.append(2)
+    >>> list.append(3)
     >>> print(list)
     [1, 2, 3]
+
 basic example function:
     >>> list.print_sorted()
     [1, 2, 3]
+
 negative numbers:
     >>> list.append(-12)
     >>> list.append(-1)
     >>> print(list)
     [1, 2, 3, -12, -1]
     >>> list.print_sorted()
-    [-12, -1, 3, 2, 1]
+    [-12, -1, 1, 2, 3]
     >>> print(list)
     [1, 2, 3, -12, -1]
+
 arguments:
     >>> list.print_sorted(1)
     Traceback (most recent call last):
