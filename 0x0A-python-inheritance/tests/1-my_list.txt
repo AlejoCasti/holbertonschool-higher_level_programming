@@ -1,9 +1,9 @@
-""" """
+
 Importing the class from the module:
-	    >>> MyList = __import__('1-my_list').MyList
+      >>> MyList = __import__('1-my_list').MyList
 subclass:
-	    >>> issubclass(MyList, list)
-	    True
+      >>> issubclass(MyList, list)
+      True
 empty list:
       >>> list = MyList()
       >>> list.print_sorted()
@@ -32,13 +32,3 @@ arguments:
       		...
       TypeError: print_sorted() takes 1 positional argument but 2 were given
 
->>> list2 = MyList()
->>> list2.append(5)
->>> list2.append(4)
->>> list2.append(3)
->>> print(list2)
-[5, 4, 3]
->>> list2.print_sorted()
-[3, 4, 5]
->>> print(list2)
-[5, 4, 3]
