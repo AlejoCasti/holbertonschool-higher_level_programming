@@ -21,3 +21,4 @@ class Student:
                 if i in self.__dict__:
                     dic[i] = self.__dict__[i]
             return dic
+        return self.__dict__
