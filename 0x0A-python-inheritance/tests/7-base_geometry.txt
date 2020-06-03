@@ -17,6 +17,14 @@ Non-Numbers
 area
 ::
 
+    >>> bg.area(21)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: area() takes exactly 1 argument (2 given)
+
+area
+::
+
     >>> bg.area()
     Traceback (most recent call last):
     	      ...
