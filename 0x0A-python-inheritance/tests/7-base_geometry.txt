@@ -43,6 +43,7 @@ Send zero:
 Correct arguments:
        >>> f.integer_validator("name", 7)
 
+>>> bg = BaseGeometry()
 
 >>> try:
 ...     bg.integer_validator("name", "John")
