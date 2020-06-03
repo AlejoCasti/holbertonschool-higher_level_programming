@@ -14,22 +14,6 @@ Create a BaseGeometry instance
 Non-Numbers
 ===========
 
-area
-::
-
-    >>> bg.area(21)
-    Traceback (most recent call last):
-    	      ...
-    TypeError: area() takes exactly 1 argument (2 given)
-
-area
-::
-
-    >>> bg.area()
-    Traceback (most recent call last):
-    	      ...
-    Exception: area() is not implemented
-
 empty arguments
 ::
 
@@ -61,7 +45,7 @@ None as arguments
     >>> bg.integer_validator('age', 0)
     Traceback (most recent call last):
     	        ...
-    TypeError: age must be greater than 0
+    ValueError: age must be greater than 0
 
 args
 
@@ -69,4 +53,4 @@ args
     >>> bg.integer_validator('distance', -4)
     Traceback (most recent call last):
     	        ...
-    TypeError: distance must be greater than 0
+    ValueError: distance must be greater than 0
