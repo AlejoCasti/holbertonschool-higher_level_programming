@@ -30,6 +30,14 @@ empty arguments
     	        ...
     TypeError: integer_validator() takes exactly 3 arguments (1 given)
 
+one arguments
+::
+
+    >>> bg.integer_validator('name')
+    Traceback (most recent call last):
+    	        ...
+    TypeError: integer_validator() takes exactly 3 arguments (2 given)
+
 
 string as arguments
 ::
