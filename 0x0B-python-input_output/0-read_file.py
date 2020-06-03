@@ -3,5 +3,6 @@
 
 
 def read_file(filename=""):
+    """ read file function """
     with open(filename, 'r') as fil:
         print(fil.read(), end='')
