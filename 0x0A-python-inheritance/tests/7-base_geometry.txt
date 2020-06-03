@@ -14,6 +14,14 @@ Create a BaseGeometry instance
 Non-Numbers
 ===========
 
+area
+::
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    	      ...
+    Exception: area() is not implemented
+
 empty arguments
 ::
 
