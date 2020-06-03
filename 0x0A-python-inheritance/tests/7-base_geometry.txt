@@ -1,83 +1,51 @@
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
->>> bg.integer_validator()
-Traceback (most recent call last):
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("")
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("", 4)
+Create a BaseGeometry instance
+=======
 
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", 4)
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+    >>> bg.integer_validator("my_int", 12)
+
+    >>> bg.integer_validator("width", 89)
+    
+
+Non-Numbers
+===========
+
+empty arguments
+::
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    	        ...
+    TypeError: integer_validator() takes exactly 3 arguments (1 given)
 
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", -3)
-Traceback (most recent call last):
-ValueError: holberton must be greater than 0
+string as arguments
+::
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", 0)
-Traceback (most recent call last):
-ValueError: holberton must be greater than 0
+    >>> bg.integer_validator('name', 'John')
+    Traceback (most recent call last):
+    	        ...
+    TypeError: name must be an integer
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", None)
-Traceback (most recent call last):
-TypeError: holberton must be an integer
+None as arguments
+::
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", 5.00)
-Traceback (most recent call last):
-TypeError: holberton must be an integer
+    >>> bg.integer_validator('age', 0)
+    Traceback (most recent call last):
+    	        ...
+    ValueError: age must be greater than 0
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", 4.33)
-Traceback (most recent call last):
-TypeError: holberton must be an integer
+args
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", True)
-Traceback (most recent call last):
-TypeError: holberton must be an integer
+::
+    >>> bg.integer_validator('distance', -4)
+    Traceback (most recent call last):
+    	        ...
+    ValueError: distance must be greater than 0
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", NaN)
-Traceback (most recent call last):
-NameError: name 'NaN' is not defined
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", "4")
-Traceback (most recent call last):
-TypeError: holberton must be an integer
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton",(1,))
-Traceback (most recent call last):
-TypeError: holberton must be an integer
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", [1])
-Traceback (most recent call last):
-TypeError: holberton must be an integer
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", [[1]])
-Traceback (most recent call last):
-TypeError: holberton must be an integer
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("holberton", {})
-Traceback (most recent call last):
-TypeError: holberton must be an integer
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("", set(1, 2))
-Traceback (most recent call last):
-TypeError: set expected at most 1 arguments, got 2
