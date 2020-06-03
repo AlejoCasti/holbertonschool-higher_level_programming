@@ -1,3 +1,4 @@
+""" """
 Importing the class from the module:
 	    >>> MyList = __import__('1-my_list').MyList
 subclass:
