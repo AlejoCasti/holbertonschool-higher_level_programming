@@ -2,19 +2,8 @@
 import module:
        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
-Validate if area:
-       >>> 'area' in dir(BaseGeometry)
-       True
-
-Validate if integer validator:
-       >>> 'integer_validator' in dir(BaseGeometry)
-       True
-
 Call area exception:
        >>> f = BaseGeometry()
-       >>> f.area()
-       Traceback (most recent call last):
-       Exception: area() is not implemented
 
 Integer validations:
        >>> f.integer_validator()
@@ -42,33 +31,6 @@ Send zero:
 
 Correct arguments:
        >>> f.integer_validator("name", 7)
-
->>> bg = BaseGeometry()
-
->>> bg.integer_validator("age",(4,))
-Traceback (most recent call last):
-TypeError: age must be an integer
-
->>> bg.integer_validator("age",[3])
-Traceback (most recent call last):
-TypeError: age must be an integer
-
->>> bg.integer_validator("age",True)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-
->>> bg.integer_validator("age",{3, 4})
-Traceback (most recent call last):
-TypeError: age must be an integer
-
->>> bg.integer_validator("age",None)
-Traceback (most recent call last):
-TypeError: age must be an integer
-
-
-
->>> bg.integer_validator("my_int", 12)
 
 >>> try:
 ...     bg.integer_validator("name", "John")
