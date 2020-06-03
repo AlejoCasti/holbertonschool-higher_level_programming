@@ -10,7 +10,8 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        if attrs is None or len(set([type(j) for j in attrs])) != 1:
+        if attrs is None or type(attrs) is not list\
+           or len(set([type(j) for j in attrs])) != 1:
             return self.__dict__
         else:
             dic = {}
