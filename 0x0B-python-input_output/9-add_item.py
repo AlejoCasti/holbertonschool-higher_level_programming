@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Project to use two early funcitons """
 from sys import argv
 
 load_from_json_file = __import__('8-load_from_json_file').load_from_json_file

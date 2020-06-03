@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" Read a file named as filename """
+""" append values of a file """
 
 
 def append_write(filename="", text=""):
+    """ append function """
     with open(filename, 'a+') as fil:
         return fil.write(text)
