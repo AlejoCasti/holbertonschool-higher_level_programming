@@ -1,6 +1,17 @@
 import module:
        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+import module:
+       >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Validate if area:
+       >>> 'area' in dir(BaseGeometry)
+       True
+
+Validate if integer validator:
+       >>> 'integer_validator' in dir(BaseGeometry)
+       True
+
 
 Call area exception:
        >>> f = BaseGeometry()
