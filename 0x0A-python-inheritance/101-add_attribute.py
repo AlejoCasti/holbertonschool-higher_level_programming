@@ -3,6 +3,7 @@
 
 
 def add_attribute(obj, name, value):
+    """Documentation """
     if "__dict__" not in dir(obj):
         raise TypeError("can't add new attribute")
     else:
