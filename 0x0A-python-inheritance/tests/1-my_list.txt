@@ -31,3 +31,14 @@ arguments:
       Traceback (most recent call last):
       		...
       TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+>>> list2 = MyList()
+>>> list2.append(5)
+>>> list2.append(4)
+>>> list2.append(3)
+>>> print(list2)
+[5, 4, 3]
+>>> list2.print_sorted()
+[3, 4, 5]
+>>> print(list2)
+[5, 4, 3]
