@@ -32,6 +32,27 @@ string as arguments
     	        ...
     TypeError: name must be an integer
 
+    >>> bg.integer_validator('name', 2.3)
+    Traceback (most recent call last):
+    	        ...
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator('name', None)
+    Traceback (most recent call last):
+    	        ...
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator('name', True)
+    Traceback (most recent call last):
+    	        ...
+    TypeError: name must be an integer
+
+    >>> bg.integer_validator('name', 'a')
+    Traceback (most recent call last):
+    	        ...
+    TypeError: name must be an integer
+
+
 None as arguments
 ::
 
