@@ -18,7 +18,7 @@ empty arguments
     >>> bg.integer_validator()
     Traceback (most recent call last):
     	        ...
-    TypeError: integer_validator() takes exactly 3 arguments (1 given)
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 
 string as arguments
@@ -44,3 +44,58 @@ args
     Traceback (most recent call last):
     	        ...
     ValueError: distance must be greater than 0
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", None)
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", 5.00)
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", 4.33)
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", True)
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", NaN)
+Traceback (most recent call last):
+NameError: name 'NaN' is not defined
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", "4")
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton",(1,))
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", [1])
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", [[1]])
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("holberton", {})
+Traceback (most recent call last):
+TypeError: holberton must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("", set(1, 2))
+Traceback (most recent call last):
+TypeError: set expected at most 1 arguments, got 2
