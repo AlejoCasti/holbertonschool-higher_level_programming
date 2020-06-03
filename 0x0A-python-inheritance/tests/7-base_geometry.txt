@@ -20,7 +20,7 @@ empty arguments
     >>> bg.integer_validator()
     Traceback (most recent call last):
     	        ...
-    TypeError: integer_validator() takes exactly 3 arguments (1 given)    
+    TypeError: integer_validator() takes exactly 3 arguments (1 given)
 
 
 string as arguments
@@ -46,3 +46,12 @@ args
     Traceback (most recent call last):
     	        ...
     ValueError: distance must be greater than 0
+
+
+Validate if area:
+    >>> 'area' in dir(BaseGeometry)
+    True
+
+Validate if integer validator:
+    >>> 'integer_validator' in dir(BaseGeometry)
+    True
