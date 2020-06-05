@@ -16,7 +16,7 @@ Type of value error
     >>> matrix_divided([["casa", 2, 3],[4, 5, 6]], 3)
     Traceback (most recent call last):
     ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: matrix must be a matrix                (list of lists) of integers/floats
 
 
 Matrix has not same size of list inside
@@ -50,7 +50,7 @@ Normal test
 normal division
 ::
     >>> matrix_divided(matrix, 2)
-    [[0.5, 1.0, 1.5], [0.5, 1.0, 1.5]]
+    [[0.0, 1.0, 1.0], [0.0, 1.0, 1.0]]
 
 return other matrix
 ::
