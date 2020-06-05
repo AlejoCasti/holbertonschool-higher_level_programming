@@ -20,7 +20,6 @@ def matrix_divided(matrix, div):
     for i in matrix:
         if a != len(i):
             raise TypeError('Each row of the matrix must have the same size')
-    matris = [[i for i in j if type(i) not in [int, float]] for j in matrix]
-    print(matris)
+    matris = matrix[:]
     a = [[round(i/div, 2) for i in j] for j in matrix]
     return a
