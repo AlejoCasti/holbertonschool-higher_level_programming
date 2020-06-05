@@ -20,6 +20,9 @@ It also works with floating-point values:
     >>> add_integer(100.3, -2)
     98
 
+It also works with floating-point values:
+    >>> add_integer(-2.2)
+    96
 
 exit of value:
     >>> type(add_integer(100.3, -2))
@@ -42,9 +45,3 @@ args:
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() takes at least 1 argument (0 given)
-
-
-None as arguments:
-    >>> add_integer(float('inf'))
-    Traceback (most recent call last):
-    OverflowError: cannot convert float infinity to integer
