@@ -11,9 +11,11 @@ def text_indentation(text):
         if i in ['.', '?', ':']:
             if idx + 1 < len(text) - 1:
                 if text[idx + 1] is " ":
-                    text = text[:(idx + cont) + 1] + '\n\n' + text[(idx + cont) + 2:]
+                    text = text[:(idx + cont) + 1] + '\n\n'\
+                           + text[(idx + cont) + 2:]
                 else:
-                    text = text[:(idx + cont) + 1] + '\n\n' + text[(idx + cont) + 1:]
+                    text = text[:(idx + cont) + 1] + '\n\n'\
+                           + text[(idx + cont) + 1:]
                 cont += 1
             else:
                 text = text[:(idx + cont) + 1] + '\n\n'
