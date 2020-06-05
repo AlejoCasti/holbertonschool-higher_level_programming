@@ -23,22 +23,27 @@ It also works with floating-point values:
 
 exit of value:
     >>> type(add_integer(100.3, -2))
-    <class 'int'>
+    <type 'int'>
 
 # Non-Numbers
 # ===========
 
 string as arguments:
     >>> add_integer(4, "School")
-    Traceback(most recent call last):
-        TypeError: b must be an integer
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+None as arguments:
+    >>> add_integer(2.3, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
 
 None as arguments:
     >>> add_integer(None)
-    Traceback(most recent call last):
-        TypeError: a must be an integer
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
 args:
     >>> add_integer()
-    Traceback(most recent call last):
-        TypeError: add_integer() missing 1 required positional argument: 'a'
+    Traceback (most recent call last):
+    TypeError: add_integer() takes at least 1 argument (0 given)
