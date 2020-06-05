@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" text indentation """
+
+
 def text_indentation(text):
+    """ text indentation """
     cont = 0
     if type(text) is not str:
         raise TypeError('text must be a string')
