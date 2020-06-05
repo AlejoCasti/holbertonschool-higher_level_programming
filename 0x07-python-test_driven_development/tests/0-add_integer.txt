@@ -34,11 +34,6 @@ string as arguments:
     TypeError: b must be an integer
 
 None as arguments:
-    >>> add_integer(2.3, None)
-    Traceback (most recent call last):
-    TypeError: b must be an integer
-
-None as arguments:
     >>> add_integer(None)
     Traceback (most recent call last):
     TypeError: a must be an integer
@@ -47,3 +42,9 @@ args:
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() takes at least 1 argument (0 given)
+
+
+None as arguments:
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
