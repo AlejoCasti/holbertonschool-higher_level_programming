@@ -28,7 +28,7 @@ class Base:
         lis = []
         if list_objs is not None and len(list_objs) > 0:
             lis = [i.to_dictionary() for i in list_objs]
-            stri = Base.to_json_string(lis)
+        stri = Base.to_json_string(lis)
         with open(cls.__name__ + '.json', 'w') as f:
             f.write(stri)
 
