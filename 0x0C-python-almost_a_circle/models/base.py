@@ -58,3 +58,7 @@ class Base:
             return [cls.create(**i) for i in li]
         except Exception:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        
