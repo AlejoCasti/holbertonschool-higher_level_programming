@@ -91,7 +91,6 @@ class Rectangle(Base):
         if args and len(args) > 0:
             array = ['id', 'width', 'height', 'x', 'y']
             for idx, i in enumerate(args):
-                print(i)
                 setattr(self, array[idx], i)
         else:
             for i, value in kwargs.items():
