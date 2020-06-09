@@ -55,6 +55,6 @@ class Base:
         try:
             with open(cls.__name__ + '.json', 'r') as f:
                 li = Base.from_json_string(f.read())
-                return [cls.create(**i) for i in li]
-        except Exeption:
+            return [cls.create(**i) for i in li]
+        except Exception:
             return []
