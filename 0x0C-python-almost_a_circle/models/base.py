@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 ''' Project testing '''
 import json
-
+import turtle
 
 class Base:
     ''' class base '''
@@ -61,4 +61,36 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+    
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        list_rectangles += list_squares[:]
+        tur = turtle.Turtle()
+        tur.color('red')
+        tur.shape('turtle')
+        tur.pensize(5)
         
+        for i in list_rectangles:
+            ''' locate turtle in position of shape '''
+            tur.penup()
+            tur.forward(i.x)
+            tur.left(90)
+            tur.forward(i.y)
+            tur.pendown()
+            tur.right(90)
+            ''' draw shape '''
+            tur.forward(i.width)
+            tur.left(90)
+            tur.forward(i.height)
+            tur.left(90)
+            tur.forward(i.width)
+            tur.left(90)
+            tur.forward(i.height)
+            ''' locate turtle in start position '''
+            tur.penup()
+            tur.forward(i.y)
+            tur.right(90)
+            tur.forward(i.x)
+        turtle.mainloop()
+            
+            
