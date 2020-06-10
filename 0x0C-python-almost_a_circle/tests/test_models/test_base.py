@@ -86,4 +86,3 @@ class TestBase(unittest.TestCase):
         obj = Base()
         failure_msg = 'global var __nb_objects not found'
         self.assertTrue(hasattr(obj, '_Base__nb_objects'), msg=failure_msg)
-
