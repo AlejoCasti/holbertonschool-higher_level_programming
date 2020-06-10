@@ -59,8 +59,6 @@ class Base:
         except Exception:
             return []
 
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
     
     @staticmethod
     def draw(list_rectangles, list_squares):
