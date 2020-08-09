@@ -11,8 +11,8 @@ if __name__ == '__main__':
                            format(argv[1], argv[2], argv[3]))
     sesion = sessionmaker(bind=engine)
     query = sesion()
-    states = query.query(State).filter_by(id='1')
+    states = query.query(State).order_by(State.id).first()
     if states is not None:
-        print('{}: {}'.format(states[0].id, states[0].name))
+        print('{}: {}'.format(states.id, states.name))
     else:
         print('Nothing')
