@@ -9,8 +9,9 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host='localhost', port=3306, user=arg[1],
                          password=arg[2], database=arg[3])
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name='" + sys.argv[4]
-                   + "' ORDER BY id ASC")
+    query = "SELECT * FROM states WHERE name={} ORDER BY\
+    id ASC".format(sys.argv[4])
+    cursor.execute(query)
     records = cursor.fetchall()
     for row in records:
         print(row)
