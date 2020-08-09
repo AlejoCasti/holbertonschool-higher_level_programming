@@ -10,7 +10,7 @@ if __name__ == '__main__':
                          password=arg[2], database=arg[3])
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE BINARY name =\
-    @0 ORDER BY id ASC ", sys.argv[4])
+    %(name)s ORDER BY id ASC ", {'name': sys.argv[4]})
     records = cursor.fetchall()
     for row in records:
         print(row)
