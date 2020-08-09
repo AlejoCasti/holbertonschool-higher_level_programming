@@ -10,8 +10,9 @@ if __name__ == '__main__':
                          password=arg[2], database=arg[3])
     cursor = db.cursor()
     query = "SELECT * FROM states WHERE BINARY name =\
-    '{}' OR 1=1 ORDER BY id ASC ".format(sys.argv[4])
-    cursor.execute(query)
+    @0 OR 1=1 ORDER BY id ASC "
+    value = sys.argv[4]
+    cursor.execute(query, argv[4])
     records = cursor.fetchall()
     for row in records:
         print(row)
