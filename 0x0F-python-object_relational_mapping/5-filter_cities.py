@@ -9,14 +9,14 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host='localhost', port=3306, user=arg[1],
                          password=arg[2], database=arg[3])
     cursor = db.cursor()
-    cursor.execute("SELECT name FROM cities \
-    WHERE cities.state_id = \
-    (SELECT id FROM states WHERE name = %(name)s) \
-    ORDER BY id ASC", {'name': sys.argv[4]})
+    cursor.execute("SELECT cities.name FROM cities\
+                INNER JOIN states ON cities.state_id = states.id\
+                WHERE states.name = %(name)s\
+                ORDER BY cities.id", {'name': sys.argv[4]})
     records = cursor.fetchall()
 
     i = ''
-    for city in query_row:
+    for city in set(records):
         print(i + str(*city), end='')
         i = ', '
 
