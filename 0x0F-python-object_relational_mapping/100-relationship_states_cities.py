@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-''' Script that lists all states form database '''
+''' Create relationship '''
+
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
-
 
 if __name__ == '__main__':
     engine = create_engine('mysql://{}:{}@localhost/{}'.
@@ -13,8 +13,6 @@ if __name__ == '__main__':
     sesion = sessionmaker(bind=engine)
     session = sesion()
     new_state = State(name='California')
-    new_city = City(name='San Francisco', state=new_state)
-    session.add(new_city)
+    new_state.cities = [city(name='San Francisco')]
+    session.add(new_state)
     session.commit()
-    session.close()
-
