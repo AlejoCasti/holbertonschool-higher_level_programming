@@ -5,6 +5,7 @@
 def find_peak(list_of_integers):
     ''' find a peak '''
     peak = 0
+    list_ = list_of_integers
     for idx, i in enumerate(list_):
         if idx - 1 == -1:
             peak = i
