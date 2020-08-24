@@ -10,8 +10,11 @@ if __name__ == '__main__':
     else:
         data = {'q': ""}
     response = requests.post(url, data)
-    js = response.json()
-    if js == {}:
-        print('No result')
-    else:
-        print('[{}] {}'.format(js.get('id'), js.get('name')))
+    try:
+        js = response.json()
+        if js == {}:
+            print('No result')
+        else:
+            print('[{}] {}'.format(js.get('id'), js.get('name')))
+    except ValueError:
+        print('Not a valid JSON')
