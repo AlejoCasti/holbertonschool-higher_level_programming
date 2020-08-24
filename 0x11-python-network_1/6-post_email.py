@@ -5,6 +5,6 @@ if __name__ == '__main__':
     import requests
     from sys import argv
     url = argv[1]
-    values = {'email' : argv[2]}
+    values = {'email': argv[2]}
     response = requests.post(url, values)
     print(response.text)
