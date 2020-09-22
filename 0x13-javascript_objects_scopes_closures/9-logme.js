@@ -1,6 +1,9 @@
 #!/usr/bin/node
-var num = 0;
+
 exports.logMe = function (item) {
-  console.log(num + ': ' + item);
-  num += 1;
+  if (!this.counter) {
+    this.counter = 0;
+  }
+  console.log(this.counter + ': ' + item);
+  this.counter++;
 };
