@@ -1,6 +1,6 @@
 #!/usr/bin/node
+var num = 0;
 exports.converter = function (base) {
-  return function (input) {
-    return input.toString(base);
-  };
+  console.log(num + ': ' + item);
+  num += 1;
 };

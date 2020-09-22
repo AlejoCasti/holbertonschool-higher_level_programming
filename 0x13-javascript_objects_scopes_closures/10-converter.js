@@ -1,6 +1,7 @@
 #!/usr/bin/node
-var num = 0;
-exports.logMe = function (item) {
-  console.log(num + ': ' + item);
-  num += 1;
+exports.converter = function (base) {
+  return function (input) {
+    return input.toString(base);
+  };
 };
+
